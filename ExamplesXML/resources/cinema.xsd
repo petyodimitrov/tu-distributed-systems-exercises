@@ -1,0 +1,13 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" targetNamespace="http://opa/default"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cool="http://opa/cool">
+	<xs:import namespace="http://opa/cool" schemaLocation="./movie.xsd" />
+	<xs:element name="cinema">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="movie" type="cool:MovieType" maxOccurs="unbounded"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

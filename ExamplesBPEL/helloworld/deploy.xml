@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:unit-test="http://ode/bpel/unit-test" xmlns:unit-test.wsdl="http://ode/bpel/unit-test.wsdl">
+  <process name="unit-test:HelloWorld2">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="helloPartnerLink">
+      <service name="unit-test.wsdl:HelloService" port="HelloPort"/>
+    </provide>
+  </process>
+</deploy>
