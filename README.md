@@ -1,5 +1,39 @@
-# tu-distributed-systems-exercises 
+## Демонстрации към лекциите за курс "Програмиране в разпределена среда" 
 
-This repository contains simple Java examples to demonstrate the main topics studies in course "Programming in Distributes Environments" at Technical University - Sofia. Lecture materials can be found at: https://drive.google.com/folderview?id=0B3DV0MdwE1X-Y0lZVS1XTTFMMkk.
+### Описание
+Курс [Програмиране в разпределена среда](http://81.161.243.12/bgmoodle/course/view.php?id=12) е част от програмата за степен бакалавър-инженер на катедра [Компютърни системи](http://cs.tu-sofia.bg/) в [Технически Университет - София](https://tu-sofia.bg/).
 
-You can import each of the example projects in Eclipse (https://eclipse.org/downloads/) and follow the instructions in its README.md.
+Това хранилище съдържа примерни програми използвани за демонстрация на различните концепции, технологии и архитектури представени на лекциите.
+
+### Технологии
+- [Open JDK 8+]() - основен програмен език
+- [Apache Maven 3.6+](https://maven.apache.org/) - инструмент за автоматично билдване
+- Среда за разработка (например Eclipse, IntelliJ IDEA, Netbeans)
+
+**Забележка**: Разгледайте REАDME.md на отделните проекти за информация относно специфични технологии.
+
+### Проекти
+1. [client-server-corba](client-server-corba/README.md)
+1. [client-server-rmi](client-server-rmi/README.md)
+1. [xml](xml/README.md)
+1. [services-soap](services-soap/README.md)
+1. [services-rest](services-rest/README.md)
+1. [business-processes-bpel](business-processes-bpel/README.md)
+1. [messaging-jms](messaging-jms/README.md)
+1. [messaging-amqp](messaging-amqp/README.md)
+1. [messaging-kafka](messaging-kafka/README.md)
+1. [esb-mule](esb-mule/README.md)
+1. [esb-camel](esb-camel/README.md)
+1. [microservices-jhipster](microservices-jhipster/README.md)
+
+---
+
+## Demo projects used in the lectures of course "Programming in a distributed environment" 
+
+### Description
+Course [Programming in a distributed environment](http://81.161.243.12/bgmoodle/course/view.php?id=12) is the part of the curriculum for the bachelor degree in department [Computer systems](http://cs.tu-sofia.bg/home.php?id=1&language=en) at [Technical University - Sofia](https://tu-sofia.bg/).
+
+This repository contains example projects used for demonstrating the different concepts, technologies and architectures presented during the course.
+
+---
+
