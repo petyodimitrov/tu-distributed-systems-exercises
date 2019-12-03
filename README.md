@@ -1,4 +1,4 @@
-## <img src="logo.png" height="30" /> Демонстрации към лекциите за курс "Програмиране в разпределена среда" 
+## <img src="logo.png" height="30" /> Демонстрации за курс "Програмиране в разпределена среда" 
 
 ### Описание
 Курс [Програмиране в разпределена среда](http://81.161.243.12/bgmoodle/course/view.php?id=12) е част от програмата за степен бакалавър-инженер на катедра [Компютърни системи](http://cs.tu-sofia.bg/home.php?id=1&language=bg) в [Технически Университет - София](https://tu-sofia.bg/).
@@ -28,7 +28,7 @@
 
 ---
 
-## <img src="logo.png" height="30" /> Demo projects used in the lectures of course "Programming in a distributed environment" 
+## <img src="logo.png" height="30" /> Demo projects used for course "Programming in a distributed environment" 
 
 ### Description
 Course [Programming in a distributed environment](http://81.161.243.12/bgmoodle/course/view.php?id=12) is the part of the curriculum for the bachelor degree in department [Computer systems](http://cs.tu-sofia.bg/home.php?id=1&language=en) at [Technical University - Sofia](https://tu-sofia.bg/).
