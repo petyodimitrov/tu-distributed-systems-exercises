@@ -13,8 +13,8 @@
 **Забележка**: Разгледайте REАDME.md на отделните проекти за информация относно специфични технологии.
 
 ### Проекти
-1. [client-server-corba](client-server-corba/README.md)
 1. [client-server-rmi](client-server-rmi/README.md)
+1. [client-server-corba](client-server-corba/README.md)
 1. [xml](xml/README.md)
 1. [services-soap](services-soap/README.md)
 1. [services-rest](services-rest/README.md)

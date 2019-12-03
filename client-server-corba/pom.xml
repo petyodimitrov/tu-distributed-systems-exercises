@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>bg.tusofia.cst.ds</groupId>
+    <artifactId>client-server-corba</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>Client-Server CORBA example</name>
+    <description>Example showing client server architecture implemented via CORBA</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jacorb</groupId>
+            <artifactId>jacorb</artifactId>
+            <version>2.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>picocontainer</groupId>
+                    <artifactId>picocontainer</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>picocontainer</groupId>
+                    <artifactId>picocontainer-tck</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>picocontainer</groupId>
+                    <artifactId>picocontainer-gems</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>
