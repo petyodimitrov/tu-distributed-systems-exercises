@@ -1,6 +1,6 @@
 # Демонстрация на клиент-сървър комуникация с CORBA
 
-[CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture)(или Common Object Request Broker Architecture) e отворен стандарт проектиран да позволи комуникацията между приложения работещи на различни системи (операционни системи, програмни езици и хардуер).
+[CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture) (или Common Object Request Broker Architecture) e отворен стандарт проектиран да позволи комуникацията между приложения работещи на различни системи (операционни системи, програмни езици и хардуер).
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.

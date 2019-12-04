@@ -1,6 +1,6 @@
 # Демонстрация на клиент-сървър комуникация с Java RMI
 
-[Java RMI](https://en.wikipedia.org/wiki/Java_remote_method_invocation)(или Java Remote Method Invocation) e Java технология позволяваща комуникацията между отделни Java приложения.
+[Java RMI](https://en.wikipedia.org/wiki/Java_remote_method_invocation) (или Java Remote Method Invocation) e Java технология позволяваща комуникацията между отделни Java приложения.
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.
