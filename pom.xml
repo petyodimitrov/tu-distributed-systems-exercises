@@ -8,6 +8,7 @@
 
     <name>Root ROM</name>
     <description>Root POM for building all Java projects in this repository</description>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
