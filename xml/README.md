@@ -1,9 +1,3 @@
-# XML examples
-
-1. Run all examples in package bg.tusofia.fksu.soa.examples and check result.
-2. Review the code and experiment tweaking it.
-
-
 # Демонстрация на възможностите за работа с XML посредством Java
 
 Приложението позволява да се експериментира с [XML](https://en.wikipedia.org/wiki/XML) посредством Java. Поддържат се популярни XML парсъри, валидация чрез [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)), извличане на данни чрез [XPath](https://en.wikipedia.org/wiki/XPath), трансформации чрез [XSLT](https://en.wikipedia.org/wiki/XSLT) и работа с XML посредством [JAX-B](https://en.wikipedia.org/wiki/Java_Architecture_for_XML_Binding).
