@@ -5,7 +5,8 @@
     <groupId>bg.tusofia.cst.ds</groupId>
     <artifactId>client-server-corba</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
+	
     <name>Client-Server CORBA example</name>
     <description>Example showing client server architecture implemented via CORBA</description>
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cinema xmlns="http://opa/default" xmlns:cool="http://opa/cool"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://opa/default cinema.xsd">
+    <movie rating="8.2">
+        <cool:title>The Avengers</cool:title>
+        <cool:length unit="min">143</cool:length>
+        <cool:synopsis><![CDATA[ Several superhumans assemble ... ]]></cool:synopsis>
+    </movie>
+    <!-- other movies ... -->
+    <movie rating="9.3">
+        <cool:title>The Shawshank Redemption</cool:title>
+        <cool:length unit="min">142</cool:length>
+        <cool:synopsis><![CDATA[ Two imprisoned men bond over ... ]]></cool:synopsis>
+    </movie>
+</cinema> 

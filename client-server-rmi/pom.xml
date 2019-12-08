@@ -5,6 +5,7 @@
     <groupId>bg.tusofia.cst.ds</groupId>
     <artifactId>client-server-rmi</artifactId>
     <version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
     <name>Client-Server RMI example</name>
     <description>Example showing client server architecture implemented via RMI</description>
