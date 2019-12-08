@@ -9,7 +9,6 @@
 
     <name>Client-Server RMI example</name>
     <description>Example showing client server architecture implemented via RMI</description>
-    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
