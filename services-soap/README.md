@@ -4,6 +4,7 @@
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.
+- [soapUI](https://www.soapui.org/downloads/soapui.html) - клиент за SOAP услуги.
 
 ## Билд
 ```

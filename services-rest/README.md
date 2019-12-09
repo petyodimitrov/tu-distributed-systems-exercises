@@ -4,6 +4,7 @@
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.
+- [Postman](https://www.getpostman.com/) - клиент за REST услуги.
 
 ## Билд
 ```
