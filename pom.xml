@@ -22,6 +22,7 @@
 	   <module>xml</module>
 	   <module>services-soap</module>
 	   <module>services-rest</module>
+	   <module>messaging-jms</module>
     </modules>
     
 </project>
