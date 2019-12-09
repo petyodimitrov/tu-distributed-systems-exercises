@@ -21,6 +21,7 @@
        <module>client-server-corba</module>
 	   <module>xml</module>
 	   <module>services-soap</module>
+	   <module>services-rest</module>
     </modules>
     
 </project>
