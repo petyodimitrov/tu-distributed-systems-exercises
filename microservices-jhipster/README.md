@@ -19,7 +19,7 @@
 
 ## Билд
 ```
-mvnw -Pprod clean package
+mvnw -Pprod clean verify com.google.cloud.tools:jib-maven-plugin:1.3.0:dockerBuild
 ```
 
 **Забележка:** Отделните 3 приложения (`sample-gateway/`, `cars-service/`, `dealers-service/`) могат да бъдат пакетирани отделно.

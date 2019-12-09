@@ -24,6 +24,8 @@
 	   <module>services-rest</module>
 	   <module>messaging-jms</module>
 	   
+	   <module>esb-mule</module>
+	   
 	   <module>microservices-jhipster</module>
     </modules>
     
