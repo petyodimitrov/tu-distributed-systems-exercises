@@ -19,6 +19,8 @@
     <modules>
        <module>client-server-rmi</module>
        <module>client-server-corba</module>
+	   <module>xml</module>
+	   <module>services-soap</module>
     </modules>
     
 </project>
