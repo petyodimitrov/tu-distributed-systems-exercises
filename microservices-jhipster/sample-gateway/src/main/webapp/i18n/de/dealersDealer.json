@@ -1,0 +1,27 @@
+{
+  "sampleGatewayApp": {
+    "dealersDealer": {
+      "home": {
+        "title": "Dealers",
+        "createLabel": "Dealer erstellen",
+        "createOrEditLabel": "Dealer erstellen oder bearbeiten",
+        "notFound": "No Dealer found"
+      },
+      "delete": {
+        "question": "Soll Dealer {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Dealer"
+      },
+      "name": "Name",
+      "address": "Address"
+    }
+  },
+  "dealersApp": {
+    "dealersDealer": {
+      "created": "Dealer erstellt mit ID {{ param }}",
+      "updated": "Dealer aktualisiert mit ID {{ param }}",
+      "deleted": "Dealer gelöscht mit ID {{ param }}"
+    }
+  }
+}

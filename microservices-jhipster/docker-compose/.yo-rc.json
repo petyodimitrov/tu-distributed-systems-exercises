@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "cars-service",
+      "dealers-service",
+      "sample-gateway"
+    ],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "clusteredDbApps": [],
+    "monitoring": "elk",
+    "consoleOptions": [
+      "curator",
+      "zipkin"
+    ],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MTBkM2RiMGQxOTNhMDMzNWEwODYwZTQ5YjBmYzRhZWUzNjY5ZWZiNGRjYzc5YWVkNTlhNGIzMGE5M2U1MDM2NzZhMmQyODczY2I4ZGE3MmYxM2JiZmVkYjE4MWI3NDMxMDk4NA=="
+  }
+}

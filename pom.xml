@@ -23,6 +23,8 @@
 	   <module>services-soap</module>
 	   <module>services-rest</module>
 	   <module>messaging-jms</module>
+	   
+	   <module>microservices-jhipster</module>
     </modules>
     
 </project>

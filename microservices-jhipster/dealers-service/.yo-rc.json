@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.musala.samples.jhipster.microservices.dealers",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "microservice",
+    "baseName": "dealers",
+    "packageName": "com.musala.samples.jhipster.microservices.dealers",
+    "packageFolder": "com/musala/samples/jhipster/microservices/dealers",
+    "serverPort": "9182",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWViYjY1MWM4OTU0NTM0ZDkxZmMzZjNjZDFhNDgyNjA0MGMxZThiN2ExOGNjMmIxYThlOGYwMzRlYTM4NDQ5MTBjODZhYjEwNGFmMmY1ZmEwYTAxMjVkMGE5ODNhMjQxZmU3MDQ5MzEyNGZkMmQ5ZmM2NjRlZTIyOGNkOTZlZmY=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

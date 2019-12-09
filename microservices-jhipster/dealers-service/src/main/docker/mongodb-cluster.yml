@@ -1,0 +1,16 @@
+version: '2'
+services:
+  dealers-mongodb:
+    image: mongo:4.0.10
+    ports:
+      - '27017:27017'
+    command: mongos --configdb dealers-mongodb-config
+  dealers-mongodb-node:
+    build:
+      context: .
+      dockerfile: mongodb/MongoDB.Dockerfile
+    command: mongod --replSet rs1 --noprealloc --smallfiles
+  dealers-mongodb-config:
+    image: mongo:4.0.10
+    container_name: dealers-mongodb-config
+    command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

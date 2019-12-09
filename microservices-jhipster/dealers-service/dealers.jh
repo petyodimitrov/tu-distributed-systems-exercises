@@ -1,0 +1,9 @@
+// JDL definition for application 'dealers' generated with command 'jhipster export-jdl'
+
+entity Dealer {
+  name String required unique minlength(2) maxlength(50),
+  address String required maxlength(255)
+}
+paginate Dealer with pagination
+microservice Dealer with dealers
+clientRootFolder Dealer with dealers

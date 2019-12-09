@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.musala.samples.jhipster.microservices.cars",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "microservice",
+    "baseName": "cars",
+    "packageName": "com.musala.samples.jhipster.microservices.cars",
+    "packageFolder": "com/musala/samples/jhipster/microservices/cars",
+    "serverPort": "9181",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmEwZjc5YTQ2MTNmZjRlZTA0MzJmNTlkNDY2YWQyZWRmNzQyODYzYzhjMTAxMjNmOTM5YWExZGM0OWQ4ZTYyMWZjYjI5YzUzNDAxOTIxMWI5MTM3NjgyZDdhNmY5MDliZDU1NTRlNDAzM2FkMWUxOWY2OWM0MzBmNWVjNmExYTg=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "de"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

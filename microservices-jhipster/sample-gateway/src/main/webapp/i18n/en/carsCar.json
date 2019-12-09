@@ -1,0 +1,28 @@
+{
+  "sampleGatewayApp": {
+    "carsCar": {
+      "home": {
+        "title": "Cars",
+        "createLabel": "Create a new Car",
+        "createOrEditLabel": "Create or edit a Car",
+        "notFound": "No Car found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Car {{ id }}?"
+      },
+      "detail": {
+        "title": "Car"
+      },
+      "make": "Make",
+      "model": "Model",
+      "year": "Year"
+    }
+  },
+  "carsApp": {
+    "carsCar": {
+      "created": "A new Car is created with identifier {{ param }}",
+      "updated": "A Car is updated with identifier {{ param }}",
+      "deleted": "A Car is deleted with identifier {{ param }}"
+    }
+  }
+}

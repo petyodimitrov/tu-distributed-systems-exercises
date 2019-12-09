@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.musala.samples.jhipster.microservices.gateway",
+      "nativeLanguage": "en",
+      "microservicePath": "../dealers-service"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "gateway",
+    "baseName": "sample_gateway",
+    "packageName": "com.musala.samples.jhipster.microservices.gateway",
+    "packageFolder": "com/musala/samples/jhipster/microservices/gateway",
+    "serverPort": "9180",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MGZlY2RhMzZlN2FkNjJmM2Q5MmEwN2Q0NjcxODNiMmNlYzVlZGE0MWY0NmJjYzcxOWFjZDA3MjRiMmZmMjlmMGRjMzIyNjlhODUwNDY5MjdjNzYxNzRmMjBkMTYzZTg2ZDE3NDNmY2FkNTUyZjE5NmIxMjNlOWJjNjMyYzQ2YzE=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "de"]
+  }
+}

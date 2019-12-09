@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "cars",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "make",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "model",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "1900",
+            "fieldValidateRulesMax": "2100"
+        }
+    ],
+    "changelogDate": "20190708165705",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "car",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "cars"
+}
