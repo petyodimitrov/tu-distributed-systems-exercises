@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "dealers",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        }
+    ],
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "dealer",
+    "databaseType": "mongodb",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "dealers"
+}

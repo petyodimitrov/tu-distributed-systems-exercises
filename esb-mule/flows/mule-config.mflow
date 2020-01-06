@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-config">
+    <global-element name="Ajax" type="org.mule.tooling.ui.modules.core.global.ajaxConnector" entity-id="Ajax#1">
+        <properties>
+            <property name="name" value="ajaxServer"/>
+            <property name="serverUrl" value="http://0.0.0.0:9092/reservation"/>
+            <property name="resourceBase" value="${app.home}/docroot"/>
+            <property name="disableReplyTo"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="logLevel"/>
+            <property name="refsThreshold"/>
+            <property name="jsonCommented"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="timeout"/>
+            <property name="interval"/>
+            <property name="maxInterval"/>
+            <property name="multiFrameInterval"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="auxiliary;index" value="1"/>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="makeReservation" entity-id="5723dda4-fe42-46c6-bc35-378b3fcc6128">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;index" value="2"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="Search Flights" type="org.mule.tooling.ui.modules.core.ajax.AJAX" entity-id="Ajax#2">
+                <properties>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="channel" value="/searchFlights"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="responseTimeout" value="10000"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="address"/>
+                    <property name="cacheMessages"/>
+                    <property name="messageCacheSize"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="connector-ref" value="ajaxServer"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                    <property name="auxiliary;index" value="3"/>
+                </properties>
+            </endpoint>
+            <pattern name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#1">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="4"/>
+                </properties>
+            </pattern>
+            <pattern name="processReservation" type="http://www.mulesoft.org/schema/mule/core/flow-ref" entity-id="Flow Reference#1">
+                <properties>
+                    <property name="name" value="processReservation"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="auxiliary;index" value="5"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="processReservation" entity-id="157915bb-6f4e-4617-8dcf-d5c4b6616522">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="auxiliary;index" value="6"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="6"/>
+            <property name="auxiliary;index" value="6"/>
+            <property name="auxiliary;index" value="6"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#2">
+            <pattern name="JSON to ReservationRequest" type="http://www.mulesoft.org/schema/mule/json/json-to-object-transformer" entity-id="JSON to Object#1">
+                <properties>
+                    <property name="returnClass" value="org.mule.example.ReservationRequest"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="auxiliary;index" value="7"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="7"/>
+                    <property name="auxiliary;index" value="7"/>
+                    <property name="mapper-ref"/>
+                    <property name="auxiliary;index" value="7"/>
+                    <property name="auxiliary;index" value="7"/>
+                    <property name="auxiliary;index" value="7"/>
+                </properties>
+            </pattern>
+            <pattern name="Save original request in Session" type="http://www.mulesoft.org/schema/mule/core/session-variable-transformer" entity-id="Session Variable#1">
+                <properties>
+                    <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-session-variable"/>
+                    <property name="variableName" value="reservationRequest"/>
+                    <property name="value" value="#[payload]"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                    <property name="auxiliary;index" value="8"/>
+                </properties>
+            </pattern>
+            <pattern name="Set ReservationResponse payload" type="http://www.mulesoft.org/schema/mule/core/set-payload" entity-id="Set Payload#1">
+                <properties>
+                    <property name="value" value="#[new org.mule.example.ReservationResponse()]"/>
+                    <property name="auxiliary;index" value="9"/>
+                    <property name="auxiliary;index" value="9"/>
+                    <property name="auxiliary;index" value="9"/>
+                </properties>
+            </pattern>
+            <pattern name="Add request flight to response" type="http://www.mulesoft.org/schema/mule/core/expression-component" entity-id="Expression#1">
+                <properties>
+                    <property name="evaluator"/>
+                    <property name="expression" value="payload.setFlights(reservationRequest.flights)"/>
+                    <property name="file"/>
+                    <property name="auxiliary;index" value="10"/>
+                    <property name="auxiliary;index" value="10"/>
+                    <property name="auxiliary;index" value="10"/>
+                </properties>
+            </pattern>
+            <pattern name="Initialize totalPrice" type="http://www.mulesoft.org/schema/mule/core/variable-transformer" entity-id="Variable#1">
+                <properties>
+                    <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-variable"/>
+                    <property name="variableName" value="totalPrice"/>
+                    <property name="value" value="#[0]"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="11"/>
+                </properties>
+            </pattern>
+            <scope name="Foreach on flights" type="http://www.mulesoft.org/schema/mule/core/foreach" entity-id="Foreach#1">
+                <properties>
+                    <property name="auxiliary;index" value="12"/>
+                    <property name="collection" value="#[payload.flights]"/>
+                    <property name="counterVariableName"/>
+                    <property name="batchSize"/>
+                    <property name="rootMessageVariableName"/>
+                    <property name="auxiliary;index" value="12"/>
+                    <property name="auxiliary;index" value="12"/>
+                    <property name="auxiliary;index" value="12"/>
+                </properties>
+                <compartment entity-id="compartment#1">
+                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#3">
+                        <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#1">
+                            <properties>
+<property name="message" value="Before throw exception"/>
+<property name="level" value="ERROR"/>
+<property name="category"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+<property name="auxiliary;index" value="13"/>
+                            </properties>
+                        </pattern>
+                        <pattern name="Search flight availability" type="http://www.mulesoft.org/schema/mule/scripting/groovyTransformer" entity-id="Groovy#1">
+                            <properties>
+<property name="returnClass"/>
+<property name="ignoreBadInput"/>
+<property name="encoding"/>
+<property name="auxiliary;index" value="14"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="14"/>
+<property name="auxiliary;index" value="14"/>
+<property name="auxiliary;index" value="14"/>
+<property name="auxiliary;index" value="14"/>
+<property name="auxiliary;index" value="14"/>
+<property name="auxiliary;index" value="14"/>
+<property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script-for-properties;0">
+    <property name="text" value="if (payload.flightNumber.endsWith('3'))&#xA;   throw new org.mule.example.FlightUnavailableException()&#xA;else&#xA;   payload"/>
+    <property name="engine" value="Groovy"/>
+    <property name="auxiliary;wrapIn" value="15"/>
+    <property name="auxiliary;index" value="15"/>
+</property-collection>
+<property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script;0">
+    <property name="text" value="if (payload.flightNumber.endsWith('3'))&#xA;   throw new org.mule.example.FlightUnavailableException()&#xA;else&#xA;   payload"/>
+    <property name="engine" value="Groovy"/>
+    <property name="auxiliary;wrapIn" value="15"/>
+    <property name="auxiliary;index" value="15"/>
+</property-collection>
+                            </properties>
+                        </pattern>
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="Acquire Seats Info" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="exchange-pattern" value="request-response"/>
+<property name="auxiliary;index" value="17"/>
+<property name="path" value="acquireSeatsInfoQueue"/>
+<property name="auxiliary;index" value="17"/>
+<property name="auxiliary;index" value="17"/>
+<property name="auxiliary;index" value="17"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="17"/>
+<property name="address"/>
+<property name="responseTimeout"/>
+<property name="encoding"/>
+<property name="disableTransportTransformer"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="17"/>
+<property name="auxiliary;index" value="17"/>
+<property name="connector-ref"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="responseTransformer-refs"/>
+<property name="auxiliary;index" value="17"/>
+<property name="auxiliary;index" value="17"/>
+<property name="auxiliary;index" value="17"/>
+                            </properties>
+                        </endpoint>
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="Acquire Flight Price" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#2">
+                            <properties>
+<property name="exchange-pattern" value="one-way"/>
+<property name="exchange-pattern" value="request-response"/>
+<property name="auxiliary;index" value="18"/>
+<property name="path" value="acquireFlightPrice"/>
+<property name="auxiliary;index" value="18"/>
+<property name="auxiliary;index" value="18"/>
+<property name="auxiliary;index" value="18"/>
+<property name="businessEventsLabel"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="18"/>
+<property name="address"/>
+<property name="responseTimeout"/>
+<property name="encoding"/>
+<property name="disableTransportTransformer"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="18"/>
+<property name="auxiliary;index" value="18"/>
+<property name="connector-ref"/>
+<property name="ref"/>
+<property name="transformer-refs"/>
+<property name="responseTransformer-refs"/>
+<property name="auxiliary;index" value="18"/>
+<property name="auxiliary;index" value="18"/>
+<property name="auxiliary;index" value="18"/>
+                            </properties>
+                        </endpoint>
+                        <pattern name="Add price to totalPrice" type="http://www.mulesoft.org/schema/mule/core/variable-transformer" entity-id="Variable#2">
+                            <properties>
+<property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-variable"/>
+<property name="variableName" value="totalPrice"/>
+<property name="value" value="#[totalPrice + payload.ticketPrice]"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+<property name="auxiliary;index" value="19"/>
+                            </properties>
+                        </pattern>
+                    </lane>
+                </compartment>
+            </scope>
+            <pattern name="Add total price to reservation" type="http://www.mulesoft.org/schema/mule/core/expression-component" entity-id="Expression#2">
+                <properties>
+                    <property name="evaluator"/>
+                    <property name="expression" value="payload.totalPrice = flowVars['totalPrice']"/>
+                    <property name="file"/>
+                    <property name="auxiliary;index" value="20"/>
+                    <property name="auxiliary;index" value="20"/>
+                    <property name="auxiliary;index" value="20"/>
+                </properties>
+            </pattern>
+            <pattern name="Object to JSON" type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" entity-id="Object to JSON#1">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="auxiliary;index" value="21"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="21"/>
+                    <property name="auxiliary;index" value="21"/>
+                    <property name="mapper-ref"/>
+                    <property name="sourceClass"/>
+                    <property name="auxiliary;index" value="21"/>
+                    <property name="auxiliary;index" value="21"/>
+                    <property name="auxiliary;index" value="21"/>
+                </properties>
+            </pattern>
+            <scope name="Choice Exception Strategy" type="http://www.mulesoft.org/schema/mule/core/choice-exception-strategy" entity-id="Choice Exception Strategy#1">
+                <properties>
+                    <property name="auxiliary;index" value="22"/>
+                    <property name="auxiliary;index" value="22"/>
+                </properties>
+                <compartment entity-id="compartment#2">
+                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#4">
+                        <scope name="Catch Exception Strategy" type="http://www.mulesoft.org/schema/mule/core/catch-exception-strategy" entity-id="Catch Exception Strategy#1">
+                            <properties>
+<property name=""/>
+<property name="when" value="#[exception.causedBy(org.mule.example.FlightUnavailableException)]"/>
+<property name="enableNotifications"/>
+<property name="auxiliary;index" value="23"/>
+<property name="auxiliary;index" value="23"/>
+<property name="auxiliary;index" value="23"/>
+                            </properties>
+                            <compartment entity-id="compartment#3">
+<lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#5">
+    <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#2">
+        <properties>
+            <property name="message" value="In Catch Exception"/>
+            <property name="level" value="ERROR"/>
+            <property name="category"/>
+            <property name="auxiliary;index" value="24"/>
+            <property name="auxiliary;index" value="24"/>
+            <property name="auxiliary;index" value="24"/>
+        </properties>
+    </pattern>
+    <pattern name="Add no availability error" type="http://www.mulesoft.org/schema/mule/scripting/groovyTransformer" entity-id="Groovy#2">
+        <properties>
+            <property name="returnClass"/>
+            <property name="ignoreBadInput"/>
+            <property name="encoding"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="auxiliary;index" value="25"/>
+            <property name="auxiliary;index" value="25"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script-for-properties;0">
+                <property name="text" value="def payload = new org.mule.example.ReservationResponse()&#xA;payload.addError('There is no availability for the selected flight')&#xA;payload"/>
+                <property name="engine" value="Groovy"/>
+                <property name="auxiliary;wrapIn" value="26"/>
+                <property name="auxiliary;index" value="26"/>
+            </property-collection>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script;0">
+                <property name="text" value="def payload = new org.mule.example.ReservationResponse()&#xA;payload.addError('There is no availability for the selected flight')&#xA;payload"/>
+                <property name="engine" value="Groovy"/>
+                <property name="auxiliary;wrapIn" value="26"/>
+                <property name="auxiliary;index" value="26"/>
+            </property-collection>
+        </properties>
+    </pattern>
+    <pattern name="Object to JSON" type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" entity-id="Object to JSON#2">
+        <properties>
+            <property name="returnClass"/>
+            <property name="ignoreBadInput"/>
+            <property name="encoding"/>
+            <property name="auxiliary;index" value="28"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="28"/>
+            <property name="auxiliary;index" value="28"/>
+            <property name="mapper-ref"/>
+            <property name="sourceClass"/>
+            <property name="auxiliary;index" value="28"/>
+            <property name="auxiliary;index" value="28"/>
+            <property name="auxiliary;index" value="28"/>
+        </properties>
+    </pattern>
+</lane>
+                            </compartment>
+                        </scope>
+                        <scope name="Catch Exception Strategy" type="http://www.mulesoft.org/schema/mule/core/catch-exception-strategy" entity-id="Catch Exception Strategy#2">
+                            <properties>
+<property name=""/>
+<property name="when"/>
+<property name="enableNotifications"/>
+<property name="auxiliary;index" value="29"/>
+<property name="auxiliary;index" value="29"/>
+<property name="auxiliary;index" value="29"/>
+                            </properties>
+                            <compartment entity-id="compartment#4">
+<lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#6">
+    <pattern name="Add exception message" type="http://www.mulesoft.org/schema/mule/scripting/groovyTransformer" entity-id="Groovy#3">
+        <properties>
+            <property name="returnClass"/>
+            <property name="ignoreBadInput"/>
+            <property name="encoding"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="auxiliary;index" value="30"/>
+            <property name="auxiliary;index" value="30"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script-for-properties;0">
+                <property name="text" value="def payload = new org.mule.example.ReservationResponse()&#xA;payload.addError(&quot;Error processing request&quot;)&#xA;payload"/>
+                <property name="engine" value="Groovy"/>
+                <property name="auxiliary;wrapIn" value="31"/>
+                <property name="auxiliary;index" value="31"/>
+            </property-collection>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script;0">
+                <property name="text" value="def payload = new org.mule.example.ReservationResponse()&#xA;payload.addError(&quot;Error processing request&quot;)&#xA;payload"/>
+                <property name="engine" value="Groovy"/>
+                <property name="auxiliary;wrapIn" value="31"/>
+                <property name="auxiliary;index" value="31"/>
+            </property-collection>
+        </properties>
+    </pattern>
+    <pattern name="Set http status 500" type="http://www.mulesoft.org/schema/mule/core/properties-transformer" entity-id="Property#1">
+        <properties>
+            <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-property"/>
+            <property name="propertyName" value="http.status"/>
+            <property name="value" value="500"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+            <property name="auxiliary;index" value="33"/>
+        </properties>
+    </pattern>
+    <pattern name="Object to JSON" type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" entity-id="Object to JSON#3">
+        <properties>
+            <property name="returnClass"/>
+            <property name="ignoreBadInput"/>
+            <property name="encoding"/>
+            <property name="auxiliary;index" value="34"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="34"/>
+            <property name="auxiliary;index" value="34"/>
+            <property name="mapper-ref"/>
+            <property name="sourceClass"/>
+            <property name="auxiliary;index" value="34"/>
+            <property name="auxiliary;index" value="34"/>
+            <property name="auxiliary;index" value="34"/>
+        </properties>
+    </pattern>
+</lane>
+                            </compartment>
+                        </scope>
+                    </lane>
+                </compartment>
+            </scope>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="acquireSeatsInfo" entity-id="c3786c0d-2ea2-4e13-a6fa-4e2234ebc67c">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="auxiliary;index" value="35"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="35"/>
+            <property name="auxiliary;index" value="35"/>
+            <property name="auxiliary;index" value="35"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#7">
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="acquireSeatsInfo" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#3">
+                <properties>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="exchange-pattern" value="request-response"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="path" value="acquireSeatsInfoQueue"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="address"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="auxiliary;index" value="36"/>
+                    <property name="auxiliary;index" value="36"/>
+                </properties>
+            </endpoint>
+            <pattern name="Aquire seats info service" type="http://www.mulesoft.org/schema/mule/scripting/groovyComponent" entity-id="Groovy#4">
+                <properties>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script-for-properties;0">
+                        <property name="text" value="if (payload.flightNumber.endsWith('2'))&#xA;   payload.seatInfo = '20A'&#xA;else&#xA;   throw new Exception()&#xA;payload"/>
+                        <property name="engine" value="Groovy"/>
+                        <property name="auxiliary;wrapIn" value="38"/>
+                        <property name="auxiliary;index" value="38"/>
+                    </property-collection>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script;0">
+                        <property name="text" value="if (payload.flightNumber.endsWith('2'))&#xA;   payload.seatInfo = '20A'&#xA;else&#xA;   throw new Exception()&#xA;payload"/>
+                        <property name="engine" value="Groovy"/>
+                        <property name="auxiliary;wrapIn" value="38"/>
+                        <property name="auxiliary;index" value="38"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+            <scope name="Catch Exception Strategy" type="http://www.mulesoft.org/schema/mule/core/catch-exception-strategy" entity-id="Catch Exception Strategy#3">
+                <properties>
+                    <property name=""/>
+                    <property name="when"/>
+                    <property name="enableNotifications"/>
+                    <property name="auxiliary;index" value="40"/>
+                    <property name="auxiliary;index" value="40"/>
+                    <property name="auxiliary;index" value="40"/>
+                </properties>
+                <compartment entity-id="compartment#5">
+                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#8">
+                        <pattern name="Add no seat info avaiable message" type="http://www.mulesoft.org/schema/mule/core/expression-component" entity-id="Expression#3">
+                            <properties>
+<property name="evaluator"/>
+<property name="expression" value="payload.seatInfo = 'No seat info available'"/>
+<property name="file"/>
+<property name="auxiliary;index" value="41"/>
+<property name="auxiliary;index" value="41"/>
+<property name="auxiliary;index" value="41"/>
+                            </properties>
+                        </pattern>
+                    </lane>
+                </compartment>
+            </scope>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="acquireFlightPrice" entity-id="579ad9e3-7557-4240-924f-cf2d9130d671">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="auxiliary;index" value="42"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="42"/>
+            <property name="auxiliary;index" value="42"/>
+            <property name="auxiliary;index" value="42"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#9">
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="acquireFlightPrice" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#4">
+                <properties>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="exchange-pattern" value="request-response"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="path" value="acquireFlightPrice"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="address"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="auxiliary;index" value="43"/>
+                    <property name="auxiliary;index" value="43"/>
+                </properties>
+            </endpoint>
+            <pattern name="acquireFlightPrice" type="http://www.mulesoft.org/schema/mule/core/expression-component" entity-id="Expression#4">
+                <properties>
+                    <property name="evaluator"/>
+                    <property name="expression" value="payload.ticketPrice = Integer.valueOf(payload.flightNumber) * 2"/>
+                    <property name="file"/>
+                    <property name="auxiliary;index" value="44"/>
+                    <property name="auxiliary;index" value="44"/>
+                    <property name="auxiliary;index" value="44"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+</mule-configuration>

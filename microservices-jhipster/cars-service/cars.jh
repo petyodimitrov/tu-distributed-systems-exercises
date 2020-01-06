@@ -1,0 +1,10 @@
+// JDL definition for application 'cars' generated with command 'jhipster export-jdl'
+
+entity Car {
+  make String required,
+  model String required,
+  year Integer required min(1900) max(2100)
+}
+paginate Car with pagination
+microservice Car with cars
+clientRootFolder Car with cars
