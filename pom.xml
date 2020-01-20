@@ -27,7 +27,7 @@
 	   <module>messaging-mqtt</module>
 	   <module>esb-mule</module>
 	   
-	   <module>microservices-jhipster</module>
+	   <!-- <module>microservices-jhipster</module> --> <!-- diable due to slow build -->
     </modules>
     
 </project>
