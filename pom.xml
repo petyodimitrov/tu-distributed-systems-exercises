@@ -23,7 +23,8 @@
 	   <module>services-soap</module>
 	   <module>services-rest</module>
 	   <module>messaging-jms</module>
-	   
+	   <module>messaging-amqp</module>
+	   <module>messaging-mqtt</module>
 	   <module>esb-mule</module>
 	   
 	   <module>microservices-jhipster</module>
