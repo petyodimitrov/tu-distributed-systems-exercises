@@ -1,44 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    
     <groupId>bg.tusofia.cst.ds</groupId>
-    <artifactId>messaging-jms</artifactId>
+    <artifactId>messaging-amqp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>Messaging JMS example</name>
-    <description>Example showing Messaging features via JMS.</description>
-
+    
+    <name>Messaging AMQP example</name>
+    <description>Example showing Messaging features via AMQP.</description>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <activemq.version>5.15.11</activemq.version>
+        <rabbitmq.client.version>5.8.0</rabbitmq.client.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <qpid.jms.version>0.48.0</qpid.jms.version>
     </properties>
-
+    
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
         <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-client</artifactId>
-            <version>${activemq.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-broker</artifactId>
-            <version>${activemq.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-kahadb-store</artifactId>
-            <version>${activemq.version}</version>
-        </dependency>
-        <dependency> <!-- for AMQP -->
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-amqp</artifactId>
-            <version>${activemq.version}</version>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>${rabbitmq.client.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -50,13 +35,8 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        <dependency> <!-- for AMQP -->
-            <groupId>org.apache.qpid</groupId>
-            <artifactId>qpid-jms-client</artifactId>
-            <version>${qpid.jms.version}</version>
-        </dependency>
     </dependencies>
-
+    
     <build>
         <plugins>
             <plugin>
@@ -78,5 +58,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
