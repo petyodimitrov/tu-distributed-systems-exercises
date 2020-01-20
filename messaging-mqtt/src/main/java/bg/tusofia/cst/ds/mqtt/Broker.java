@@ -1,6 +1,5 @@
-package bg.tusofia.cst.ds.jms;
+package bg.tusofia.cst.ds.mqtt;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.broker.BrokerService;
 
 /**
@@ -10,8 +9,7 @@ public class Broker {
 
     public static void main(String[] args) throws Exception {
         BrokerService broker = new BrokerService();
-        broker.addConnector(ActiveMQConnectionFactory.DEFAULT_BROKER_BIND_URL);
-        broker.addConnector("amqp://0.0.0.0:5672?transport.tcpNoDelay=true");
+        broker.addConnector("mqtt://0.0.0.0:1883");
         System.out.println("Running embedded Active MQ message broker...");
         broker.start();
     }
