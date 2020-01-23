@@ -25,6 +25,7 @@
 	   <module>messaging-jms</module>
 	   <module>messaging-amqp</module>
 	   <module>messaging-mqtt</module>
+	   <module>messaging-kafka</module>
 	   <module>esb-mule</module>
 	   
 	   <!-- <module>microservices-jhipster</module> --> <!-- diable due to slow build -->
