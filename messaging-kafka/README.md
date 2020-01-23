@@ -1,6 +1,6 @@
-# Демонстрация на Messaging с JMS
+# Демонстрация на Messaging с Apache Kafka
 
-[Apache Kafka](https://en.wikipedia.org/wiki/Apache_Kafka)е Java/Scala платформа за предаване на потоци от данни посредством топици (topics).
+[Apache Kafka](https://en.wikipedia.org/wiki/Apache_Kafka) е Java/Scala платформа за предаване на потоци от данни посредством топици (topics).
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.
