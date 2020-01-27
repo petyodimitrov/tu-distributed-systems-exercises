@@ -22,7 +22,7 @@ mvnw clean package
 ```
 java -jar target/services-graphql-1.0-SNAPSHOT.jar
 ```
-При стартиране приложението принтира `Running GraphQL web service...` (заедно с логовете от Spring,) и започва да чака за клиентски заявки. 
+При стартиране приложението принтира `Running GraphQL web service...` (заедно с логовете от Spring) и започва да чака за клиентски заявки. 
 
 
 ### GraphQL клиент (използващ GraphiQL)
