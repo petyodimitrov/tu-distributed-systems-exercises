@@ -18,13 +18,14 @@
 1. [xml](xml/README.md)
 1. [services-soap](services-soap/README.md)
 1. [services-rest](services-rest/README.md)
+1. [services-graphql](services-graphql/README.md)
 1. [business-processes-bpel](business-processes-bpel/README.md)
 1. [messaging-jms](messaging-jms/README.md)
 1. [messaging-amqp](messaging-amqp/README.md)
 1. [messaging-mqtt](messaging-mqtt/README.md)
 1. [messaging-kafka](messaging-kafka/README.md)
 1. [esb-camel](esb-camel/README.md) - todo
-   - [esb-mule](esb-mule/README.md) (deprecated) - todo
+1. [esb-mule](esb-mule/README.md) (deprecated) - todo
 1. [microservices-jhipster](microservices-jhipster/README.md)
 
 ---
