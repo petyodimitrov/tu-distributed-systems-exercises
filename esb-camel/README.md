@@ -1,11 +1,9 @@
-# Демонстрация на Messaging с AMQP (0-9-1)
+# Демонстрация на ESB с Apache Camel
 
-[AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol)(или Advanced Message Queuing Protocol) е протокол за изпращане и получаване на съобщения.
+[Apache Camel](https://en.wikipedia.org/wiki/Apache_Camel) е Java базиран Message-Oriented Middleware (MOM) фреймуърк с отворен код. Той може да изпълнява ролята на ESB и да интегрира разнообразни системи и протоколи.
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8.
-- [RabbitMQ](https://www.rabbitmq.com/) - AMQP message-oriented middleware.
-  - Примери: https://www.rabbitmq.com/getstarted.html, https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/java
 
 ## Билд
 ```
@@ -17,31 +15,19 @@ mvnw clean package
 ## Стартиране
 
 ### Изисквания
-За да работи примера трябва да инсталирате и стартирате RabbitMQ брокер. 
+За да работи примера трябва първо да стартирате REST услугата от упражнение [services-rest](../services-rest). Моля вижте инструкциите там.
 
-#### Инструкции за инсталация
-1. Изтеглете и инсталирайте Erlang и OTP (https://www.erlang.org/downloads)
-1. Изпълнете и инсталирайте RabbitMQ (https://www.rabbitmq.com/download.html). Брокерът се стартира като сървис.
-1. Включете плъгина за администация като идете в директория `<install-dir>/rabbitmq_server-<version>/sbin` и изпълните команда `rabbitmq-plugins enable rabbitmq_management` (https://www.rabbitmq.com/management.html)
-1. Отворете административната страница на RabbitMQ http://localhost:15672/ (креденции: guest/guest)
-
-<img src="rabbitmq-administration.png" width="800" />
-
-### Консуматор на съобщения
+### Apache Camel решение
+За да стартирате решението изпълнете следната команда:
 ```
-java -cp target/messaging-amqp-1.0-SNAPSHOT-jar-with-dependencies.jar bg.tusofia.cst.ds.amqp.Receiver
+java -jar target/esb-camel-1.0-SNAPSHOT.jar
 ```
-При стартиране приложението принтира `Waiting for message on queue 'test_queue'...` и започва да чака за съобщение (след пристигането на съобщение приложението го прочита и спира). 
+При стартиране приложението принтира `Running Camel example...` (заедно с логове от Apache Camel) и започва да чака за клиентски дейтвия.
 
-**Забележка**: Вместо да използвате горната команда, може да стартирате клас `bg.tusofia.cst.ds.amqp.Receiver` директно от средата си за разработка.
-
-### Производител на съобщения
-```
-java -cp target/messaging-amqp-1.0-SNAPSHOT-jar-with-dependencies.jar bg.tusofia.cst.ds.amqp.Sender <съобщение>
-```
-При стартиране приложението принтира `Sending message to queue 'test_queue'...` и изпраща съобщението 10 пъти. Ако не въведете съобщение се изпраща текст "opa opa".
-
-**Забележка**: Вместо да използвате горната команда, може да стартирате клас `bg.tusofia.cst.ds.amqp.Sender` директно от средата си за разработка.
+### Тестване
+Приложението създава две директории `./get` и `./post` в директорията от където е стартирано. Поставете един файл във всяка директория (съдържанието не е от значение):
+- `./get` - приложението прави GET заявка до REST сървиса и връща резултат (например: `{"id":"1","title":"Introduction","slideCount":50,"createdOn":1580247204808}`);
+- `./get` - приложението прави POST заявка до REST сървиса, създава ресурс и връща URL-а до него (например: `http://localhost:9998/lectures/4`).
 
 ### Приключване
-След приключване на демонстрацията спрете процеса на консуматора.
+След приключване на демонстрацията спрете процеса на Apache Camel решението.

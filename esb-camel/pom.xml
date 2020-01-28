@@ -8,15 +8,14 @@
     <packaging>jar</packaging>
 
     <name>ESB Camel example</name>
-    <description>Example showing ESB features via Camel.</description>
+    <description>Example showing ESB features via Apache Camel.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <camel.version>2.12.0</camel.version>
-        <camel.jackson.version>2.14.1</camel.jackson.version>
-        <slf4j.version>1.7.25</slf4j.version>
+        <camel.version>3.0.1</camel.version>
+        <slf4j.version>1.7.30</slf4j.version>
     </properties>
 
     <dependencies>
@@ -43,7 +42,7 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jackson</artifactId>
-            <version>${camel.jackson.version}</version>
+            <version>${camel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -60,38 +59,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <version>2.4.0</version>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>bg.tusofia.cst.ds.camel.Main</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- bind to the packaging phase -->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
                 <configuration>
                     <filters>
                         <filter>
