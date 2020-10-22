@@ -15,7 +15,7 @@ mvnw clean package
 ## Стартиране
 
 ### Изисквания
-За да работи примера трябва да стартирате CORBA регистър с Java команда [orbd](https://docs.oracle.com/javase/9/tools/orbd.htm#JSWOR714) (част от OpenJDK; виж поддиректория `bin/`).
+За да работи примера трябва да стартирате CORBA регистър с Java команда [orbd](https://docs.oracle.com/javase/9/tools/orbd.htm#JSWOR714) (част от OpenJDK).
 ```
 orbd -ORBInitialPort 1050
 ```
