@@ -69,6 +69,7 @@ java -jar target/services-graphql-1.0-SNAPSHOT.jar
 
 #### Създаване на запис
 Заявка връщаща идентификатора на новосъздадения потребител:
+```
 mutation {
   createPerson(name: "Rob", age: 36) {
     id
