@@ -36,7 +36,7 @@ docker-compose up -d
 ## Разгледайте решението:
 * jHispter Registry: http://localhost:8761
 * Sample Gateway: http://localhost:8080/
-* Kibana: http://localhost:5601/app/kiban
+* Kibana: http://localhost:5601/app/kibana/
 * Zipkin: http://localhost:9411/zipkin/
 
 **Забележка:** Креденциите са `admin/admin`.
