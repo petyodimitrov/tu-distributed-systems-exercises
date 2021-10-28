@@ -11,6 +11,7 @@ import bg.tusofia.cst.ds.xml.parsers.StAXReadEventExample;
 import bg.tusofia.cst.ds.xml.parsers.StAXWriteExample;
 import bg.tusofia.cst.ds.xml.validators.XMLValidationExample2;
 import bg.tusofia.cst.ds.xml.validators.XMLValidationExample3;
+
 import java.lang.reflect.Method;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length == 0) {
-            throw new IllegalArgumentException("Missing command. Supported commands: " + commands.keySet().toString());
+            throw new IllegalArgumentException("Missing command. Supported commands: " + commands.keySet().toString() + ", or all");
         }
 
         Class<?> clazz = commands.get(args[0]);

@@ -1,9 +1,10 @@
 # Демонстрация на клиент-сървър комуникация с CORBA
 
-[CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture) (или Common Object Request Broker Architecture) e отворен стандарт проектиран да позволи комуникацията между приложения работещи на различни системи (операционни системи, програмни езици и хардуер).
+[CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture) (или Common Object Request Broker Architecture) 
+e отворен стандарт проектиран да позволи комуникацията между приложения работещи на различни системи (операционни системи, програмни езици и хардуер).
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 
 ## Билд
 ```
@@ -19,7 +20,7 @@ mvnw clean package
 ```
 orbd -ORBInitialPort 1050
 ```
-**Забележка**: За Windows може да използвате bat файл `run-orbd.bat`.
+**Забележка**: За Windows може да използвате bat файл `run-orbd.bat`,  а за Linux `run-orbd.sh`.
  
 ### CORBA сървър
 ```
@@ -51,4 +52,7 @@ java -cp target/client-server-corba-1.0-SNAPSHOT.jar bg.tusofia.cst.ds.corba.cli
 idlj -fclient -fserver -pkgPrefix hello bg.tusofia.cst.ds.corba.generated -td src\main\java src\main\resources\hello.idl
 ``` 
 
-**Забележка**: По принцип не е добра практика генериран код да се държи под сорс контрол. Вместо това процесът по генерация може да се автоматизира чрез Maven (или друг инструмент). За целите на тази демонстрация обаче е желателно кода да е видим и не нужно да усложняваме процеса с допълнителни стъпки. При интерес може да разгледате Maven плъгин [CORBA IDL Compiler](https://www.mojohaus.org/idlj-maven-plugin/), който позволява подобна автоматизация.
+> **Забележка**: По принцип не е добра практика генериран код да се държи под сорс контрол.
+> Вместо това процесът по генерация може да се автоматизира чрез Maven (или друг инструмент).
+> За целите на тази демонстрация обаче е желателно кода да е видим и не нужно да усложняваме процеса с допълнителни стъпки.
+> При интерес може да разгледате Maven плъгин [CORBA IDL Compiler](https://www.mojohaus.org/idlj-maven-plugin/), който позволява подобна автоматизация.

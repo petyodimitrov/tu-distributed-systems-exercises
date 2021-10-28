@@ -3,7 +3,7 @@
 [Java RMI](https://en.wikipedia.org/wiki/Java_remote_method_invocation) (или Java Remote Method Invocation) e Java технология позволяваща комуникацията между отделни Java приложения.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 
 ## Билд
 ```
@@ -20,9 +20,9 @@ mvnw clean package
 set CLASSPATH=target/client-server-rmi-1.0-SNAPSHOT.jar
 rmiregistry
 ```
-Регистърът има нужда от Java интерфейса играеш ролята на договор между клиента и сървъра. Затова в горната команда целия jar файл на приложението е сложен на Java classpath-а.
+Регистърът има нужда от Java интерфейса играещ ролята на договор между клиента и сървъра. Затова в горната команда целия jar файл на приложението е сложен на Java classpath-а.
 
-**Забележка**: За Windows може да използвате bat файл `run-rmiregistry.bat`.
+**Забележка**: За Windows може да използвате bat файл `run-rmiregistry.bat`, а за Linux `run-rmiregistry.sh`.
 
 ### RMI сървър
 ```

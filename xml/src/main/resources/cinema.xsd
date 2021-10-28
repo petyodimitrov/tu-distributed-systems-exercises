@@ -1,5 +1,4 @@
-<xs:schema attributeFormDefault="unqualified"
-           elementFormDefault="qualified" targetNamespace="http://opa/default"
+<xs:schema elementFormDefault="qualified" targetNamespace="http://opa/default"
            xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cool="http://opa/cool">
     <xs:import namespace="http://opa/cool" schemaLocation="movie.xsd"/>
     <xs:element name="cinema">

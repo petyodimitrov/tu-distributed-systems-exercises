@@ -2,6 +2,7 @@ package bg.tusofia.cst.ds.xml.validators;
 
 import bg.tusofia.cst.ds.xml.Constants;
 import bg.tusofia.cst.ds.xml.Util;
+
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

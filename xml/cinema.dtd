@@ -1,7 +1,7 @@
 <!ELEMENT cinema (movie+)>
-        <!ELEMENT movie (title, length, synopsis)>
-        <!ATTLIST movie rating CDATA #REQUIRED>
-        <!ELEMENT title (#PCDATA)>
-        <!ELEMENT length (#PCDATA)>
-        <!ATTLIST length unit CDATA #REQUIRED>
-        <!ELEMENT synopsis (#PCDATA)>
+<!ELEMENT movie (title, length, synopsis)>
+<!ATTLIST movie rating CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ATTLIST length unit CDATA #REQUIRED>
+<!ELEMENT synopsis (#PCDATA)>

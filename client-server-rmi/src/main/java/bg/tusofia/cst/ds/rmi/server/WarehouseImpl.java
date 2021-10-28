@@ -1,6 +1,7 @@
 package bg.tusofia.cst.ds.rmi.server;
 
 import bg.tusofia.cst.ds.rmi.Warehouse;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE cinema SYSTEM "./cinema.dtd">
+<!DOCTYPE cinema SYSTEM "xml/cinema.dtd">
 <cinema>
     <movie rating="8.2">
         <title>The Avengers</title>

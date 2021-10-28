@@ -1,6 +1,7 @@
 package bg.tusofia.cst.ds.rmi.client;
 
 import bg.tusofia.cst.ds.rmi.Warehouse;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 

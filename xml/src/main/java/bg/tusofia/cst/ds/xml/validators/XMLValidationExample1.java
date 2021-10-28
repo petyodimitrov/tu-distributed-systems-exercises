@@ -1,6 +1,7 @@
 package bg.tusofia.cst.ds.xml.validators;
 
 import bg.tusofia.cst.ds.xml.Constants;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.FileInputStream;
@@ -9,7 +10,7 @@ import java.io.InputStream;
 /**
  * Shows how to validate an XML document with embedded XML schema.
  * <p>
- * NOTE: Requires the XML & DTD files to be loaded from the file system, not classpath.
+ * NOTE: Requires the XML & DTD files to be loaded from the file system, not classpath. So this class can be run only from the IDE.
  */
 public class XMLValidationExample1 {
 

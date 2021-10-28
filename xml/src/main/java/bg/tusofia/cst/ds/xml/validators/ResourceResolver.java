@@ -3,6 +3,7 @@ package bg.tusofia.cst.ds.xml.validators;
 import com.sun.org.apache.xerces.internal.dom.DOMInputImpl;
 import org.w3c.dom.ls.LSInput;
 import org.w3c.dom.ls.LSResourceResolver;
+
 import java.io.InputStream;
 import java.util.Objects;
 

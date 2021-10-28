@@ -1,5 +1,4 @@
-/.*
-/RemoteSystemsTempFiles
 bin/
-
+.idea/
+target/
 *.iml

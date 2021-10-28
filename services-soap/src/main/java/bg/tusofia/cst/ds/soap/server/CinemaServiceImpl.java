@@ -1,6 +1,7 @@
 package bg.tusofia.cst.ds.soap.server;
 
 import bg.tusofia.cst.ds.soap.CinemaService;
+
 import javax.jws.WebService;
 import javax.xml.ws.soap.Addressing;
 

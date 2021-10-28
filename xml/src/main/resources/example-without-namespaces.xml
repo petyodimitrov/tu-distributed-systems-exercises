@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cinema>
-    <movie rating="8.2">
+    <movie rating="8.0">
         <title>The Avengers</title>
         <length unit="min">143</length>
         <synopsis><![CDATA[ Several superhumans assemble ... ]]></synopsis>
