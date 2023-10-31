@@ -14,6 +14,7 @@ class WarehouseImpl extends UnicastRemoteObject implements Warehouse {
 
     @Override
     public double getPrice(String productName) throws RemoteException {
+        System.out.println("Received 'getPrice()' request.");
         return 69.0;
     }
 

@@ -3,7 +3,7 @@
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)(или REpresentational State Transfer) е стил софтуерна архитектура за реализация на уеб услуги. Примерът използва [JAX-RS](https://docs.oracle.com/javaee/6/tutorial/doc/giepu.html) за създаване на REST услуга и [cURL](https://en.wikipedia.org/wiki/CURL) за тестването ѝ.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 - [Postman](https://www.getpostman.com/) - клиент за REST услуги.
 
 ## Билд

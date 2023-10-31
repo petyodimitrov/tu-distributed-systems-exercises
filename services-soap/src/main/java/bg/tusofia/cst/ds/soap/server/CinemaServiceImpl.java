@@ -10,8 +10,9 @@ import javax.xml.ws.soap.Addressing;
 public class CinemaServiceImpl implements CinemaService {
 
     public String getMovieInfo(String title, int year) throws Exception {
+        System.out.println("Received 'getMovieInfo' request.");
         return "The length of movie '" + title + "' (" + year + ") is "
-                + CinemaUtil.getInstance().getMovieLength(title);
+                + CinemaUtil.getInstance().getMovieLength(title) + " minutes";
     }
 
 }

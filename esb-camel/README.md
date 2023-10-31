@@ -3,7 +3,7 @@
 [Apache Camel](https://en.wikipedia.org/wiki/Apache_Camel) е Java базиран Message-Oriented Middleware (MOM) фреймуърк с отворен код. Той може да изпълнява ролята на ESB и да интегрира разнообразни системи и протоколи.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 
 ## Билд
 ```

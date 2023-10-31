@@ -3,7 +3,7 @@
 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol)(или Advanced Message Queuing Protocol) е протокол за изпращане и получаване на съобщения.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 - [RabbitMQ](https://www.rabbitmq.com/) - AMQP message-oriented middleware.
   - Примери: https://www.rabbitmq.com/getstarted.html, https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/java
 

@@ -5,7 +5,7 @@ import java.util.Map;
 
 class CinemaUtil {
 
-    private Map<String, Integer> movieLengths;
+    private final Map<String, Integer> movieLengths;
 
     private static volatile CinemaUtil instance;
 
@@ -23,6 +23,7 @@ class CinemaUtil {
     private CinemaUtil() {
         movieLengths = new HashMap<>();
         movieLengths.put("The Avengers", 144);
+        movieLengths.put("The Expendables 2", 103);
         // top 3
         movieLengths.put("The Shawshank Redemption", 142);
         movieLengths.put("The Godfather", 175);
@@ -32,7 +33,7 @@ class CinemaUtil {
     int getMovieLength(String title) throws Exception {
         Integer length = movieLengths.get(title);
         if (length != null) {
-            return length.intValue();
+            return length;
         } else {
             throw new Exception("unknown movie");
         }

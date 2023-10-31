@@ -7,7 +7,7 @@
 - [GraphiQL](https://github.com/graphql/graphiql) за тестването ѝ.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 
 ## Билд
 ```

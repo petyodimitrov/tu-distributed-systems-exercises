@@ -46,7 +46,7 @@ public class CinemaClient {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         message.writeTo(baos);
 
-        String xmlString = new String(baos.toByteArray());
+        String xmlString = baos.toString();
         Source xmlInput = new StreamSource(new StringReader(xmlString));
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -66,7 +66,7 @@ public class CinemaClient {
         System.out.println("Running SOAP client...");
 
         System.out.println(">>> request >>>");
-        SOAPMessage request = createMessage("Avengers", 2012);
+        SOAPMessage request = createMessage("The Avengers", 2012);
         printMessage(request);
 
         SOAPMessage response = dispatch.invoke(request);

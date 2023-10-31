@@ -59,10 +59,11 @@
               <to variable="myVar" part="TestPart"/>
           </copy>
       </assign>
-       <reply name="end"  
-              partnerLink="helloPartnerLink"
-              portType="test:HelloPortType" 
-              operation="hello"
-              variable="myVar"/>
+        
+      <reply name="end"
+         partnerLink="helloPartnerLink"
+         portType="test:HelloPortType"
+         operation="hello"
+         variable="myVar"/>
    </sequence>
 </process>

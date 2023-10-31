@@ -3,7 +3,7 @@
 [JMS](https://en.wikipedia.org/wiki/Java_Message_Service)(или Java Message Service) е Java message-oriented middleware API за изпращане и получаване на съобщения между два или повече клиента. JMS поддържа два вида структури - опашка (queue) и топик (topic).
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 - [Apache Active MQ](https://activemq.apache.org/index.html) - Java message-oriented middleware.
 
 ## Билд

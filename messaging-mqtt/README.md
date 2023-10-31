@@ -3,7 +3,7 @@
 [MQTT](https://en.wikipedia.org/wiki/MQTT)(или MQ Telemetry Transport) е pub-sub мрежови протокол за транспортиране на съобщения между устройства посредством topic-и.
 
 ## Технологии
-- Препочъва се използването на OpenJDK 8.
+- Препочъва се използването на OpenJDK 8+.
 - [Apache Active MQ](https://activemq.apache.org/index.html) - Java message-oriented middleware.
 
 ## Билд

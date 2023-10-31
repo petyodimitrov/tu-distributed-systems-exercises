@@ -27,11 +27,13 @@
 	   <module>messaging-amqp</module>
 	   <module>messaging-mqtt</module>
 	   <module>messaging-kafka</module>
+       <module>esb-camel</module>
 
-        <!-- Temporary disable-->
-        <!-- <module>esb-mule</module>-->
-	   
-	   <!-- <module>microservices-jhipster</module> --> <!-- diable due to slow build -->
+       <!-- Ignore because Mule ESB is not free for use -->
+       <!-- <module>esb-mule</module>-->
+
+       <!-- Disable due to slow build -->
+	   <!-- <module>microservices-jhipster</module> -->
     </modules>
     
 </project>

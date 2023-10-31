@@ -1,6 +1,5 @@
 package bg.tusofia.cst.ds.jms;
 
-import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -16,7 +15,7 @@ import javax.jms.TextMessage;
 public class Producer {
 
     public static void main(String[] args) throws JMSException {
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://127.0.0.1:61616"); //61616
         Connection connection = connectionFactory.createConnection();
         connection.start();
 
