@@ -24,8 +24,8 @@
 1. [messaging-amqp](messaging-amqp/README.md)
 1. [messaging-mqtt](messaging-mqtt/README.md)
 1. [messaging-kafka](messaging-kafka/README.md)
-1. [esb-camel](esb-camel/README.md) - todo
-1. [esb-mule](esb-mule/README.md) (deprecated) - todo
+1. [esb-camel](esb-camel/README.md)
+1. [esb-mule](esb-mule/README.md) (deprecated)
 1. [microservices-jhipster](microservices-jhipster/README.md)
 
 ---
