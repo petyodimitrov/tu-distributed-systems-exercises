@@ -23,6 +23,7 @@
 	   <module>services-soap</module>
 	   <module>services-rest</module>
 	   <module>services-graphql</module>
+       <module>services-grpc</module>
 	   <module>messaging-jms</module>
 	   <module>messaging-amqp</module>
 	   <module>messaging-mqtt</module>

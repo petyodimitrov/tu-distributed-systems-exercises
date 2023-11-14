@@ -1,6 +1,6 @@
 # Демонстрация на REST уеб услуга
 
-[REST](https://en.wikipedia.org/wiki/Representational_state_transfer)(или REpresentational State Transfer) е стил софтуерна архитектура за реализация на уеб услуги. Примерът използва [JAX-RS](https://docs.oracle.com/javaee/6/tutorial/doc/giepu.html) за създаване на REST услуга и [cURL](https://en.wikipedia.org/wiki/CURL) за тестването ѝ.
+[REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (или REpresentational State Transfer) е стил софтуерна архитектура за реализация на уеб услуги. Примерът използва [JAX-RS](https://docs.oracle.com/javaee/6/tutorial/doc/giepu.html) за създаване на REST услуга и [cURL](https://en.wikipedia.org/wiki/CURL) за тестването ѝ.
 
 ## Технологии
 - Препочъва се използването на OpenJDK 8+.
@@ -42,7 +42,7 @@ curl -X POST http://localhost:9998/lectures \
         "title": "REST",
         "slideCount": 90,
         "createdOn": 1575851740931
-    }'
+      }'
 ```
 
 #### Взимане на новата лекция 
@@ -58,7 +58,7 @@ curl -X PUT http://localhost:9998/lectures/4 \
         "title": "REST",
         "slideCount": 91,
         "createdOn": 1575851740931
-    }'
+      }'
 ```
 
 #### Изтриване на лекцията
