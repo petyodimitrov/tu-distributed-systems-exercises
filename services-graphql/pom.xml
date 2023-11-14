@@ -16,7 +16,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Services REST example</name>
+    <name>Services GraphQL example</name>
     <description>Example showing GraphQL.</description>
 
     <properties>
