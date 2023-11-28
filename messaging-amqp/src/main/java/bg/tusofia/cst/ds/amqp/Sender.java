@@ -18,12 +18,12 @@ public class Sender {
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
 
-            channel.exchangeDeclare(Constants.EXCHANGE, BuiltinExchangeType.FANOUT);
+            channel.exchangeDeclare(Constants.EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
 
             for (int i = 0; i < 10; i++) {
-                System.out.println("Sending message to exchange '" + Constants.EXCHANGE + "'...");
+                System.out.println("Sending message " + i + " to exchange '" + Constants.EXCHANGE_NAME + "'...");
                 String message = text + i;
-                channel.basicPublish(Constants.EXCHANGE, "" /* blank routing key */, null /* no properties */, message.getBytes(StandardCharsets.UTF_8));
+                channel.basicPublish(Constants.EXCHANGE_NAME, "" /* blank routing key */, null /* no properties */, message.getBytes(StandardCharsets.UTF_8));
                 System.out.println("Sent message.");
             }
         }

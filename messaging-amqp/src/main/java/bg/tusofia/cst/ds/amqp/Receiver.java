@@ -5,6 +5,7 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
+
 import java.nio.charset.StandardCharsets;
 
 public class Receiver {
@@ -13,13 +14,13 @@ public class Receiver {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
 
-        Connection connection = factory.newConnection();
+        Connection connection = factory.newConnection(); // not closed on purpose
         Channel channel = connection.createChannel();
 
-        channel.exchangeDeclare(Constants.EXCHANGE, BuiltinExchangeType.FANOUT);
+        channel.exchangeDeclare(Constants.EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
         String queueName = channel.queueDeclare().getQueue(); /* generates a server-named, exclusive, autodelete, non-durable queue */
-        channel.queueBind(queueName, Constants.EXCHANGE, "" /* blank routing key */);
-        System.out.println("Queue '" + queueName + "' is bound to exchange '" + Constants.EXCHANGE + "'.");
+        channel.queueBind(queueName, Constants.EXCHANGE_NAME, "" /* blank routing key */);
+        System.out.println("Queue '" + queueName + "' is bound to exchange '" + Constants.EXCHANGE_NAME + "'.");
 
         System.out.println("Waiting for message on queue '" + queueName + "'...");
 
