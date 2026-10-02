@@ -19,6 +19,8 @@
 1. [services-soap](services-soap/README.md)
 1. [services-rest](services-rest/README.md)
 1. [services-graphql](services-graphql/README.md)
+1. [services-grpc](services-grpc/README.md)
+1. [services-mcp](services-mcp/README.md)
 1. [business-processes-bpel](business-processes-bpel/README.md)
 1. [messaging-jms](messaging-jms/README.md)
 1. [messaging-amqp](messaging-amqp/README.md)

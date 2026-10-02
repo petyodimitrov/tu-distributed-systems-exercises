@@ -24,6 +24,8 @@
 	   <module>services-rest</module>
 	   <module>services-graphql</module>
        <module>services-grpc</module>
+       <!-- Requires JDK 17+ -->
+       <module>services-mcp</module>
 	   <module>messaging-jms</module>
 	   <module>messaging-amqp</module>
 	   <module>messaging-mqtt</module>
