@@ -16,6 +16,7 @@
 1. [client-server-rmi](client-server-rmi/README.md)
 1. [client-server-corba](client-server-corba/README.md)
 1. [xml](xml/README.md)
+1. [xml-prompting](xml-prompting/README.md)
 1. [services-soap](services-soap/README.md)
 1. [services-rest](services-rest/README.md)
 1. [services-graphql](services-graphql/README.md)
