@@ -20,6 +20,7 @@
        <module>client-server-rmi</module>
        <module>client-server-corba</module>
 	   <module>xml</module>
+       <module>xml-prompting</module>
 	   <module>services-soap</module>
 	   <module>services-rest</module>
 	   <module>services-graphql</module>
